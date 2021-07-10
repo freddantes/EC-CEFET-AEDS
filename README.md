@@ -84,4 +84,30 @@
 <ul><b>FLUXO DO PROCESSO:</b></ul>
 <p>
 <p>
-<img src="https://user-images.githubusercontent.com/85570101/125146316-8f44dc80-e0fb-11eb-91d6-ed18be17bee6.png">
+<img src="https://user-images.githubusercontent.com/85570101/125147663-22354500-e103-11eb-8a63-55a05f893bf4.png">
+<p>
+<b>ETAPAS:</b>
+<p>
+1- O Disco é inicializado.<br>
+2- O documento de texto com os arquivos é lido e tokenizado.<br>
+3- A matriz de Disco e preenchida com os tokens dos arquivos.<br>
+4- O documento de texto com os processos é lido e tokenizado.<br>
+5- A Memória é iniciada e vai ser preenchida com os tokens dos arquivos conforme descrito nos processos.<br>
+6- Caso exista algum excedente ao limite de 5 arquivos nos processos, será iniciada e Swap e esses excedentes serão reservados lá.<br>
+7- As primeiras entradas de arquivo na memória serão devolvidas ao Disco. Esse número será o mesmo dos excedentes.<br>
+8- Com o espaço liberado, os excedentes que estavam na Swap serão passadas à Memória.<br>
+9- Caso o arquivo necessário para um processo já esteja na Memória, o processo irá buscar diretamente de lá, como acesso válido. Entretanto, se o arquivo não tiver carregado na Memória, ele irá acessr o Disco para carregar este arquivo na Memória, esse processo determina um <i>page miss</i>, que é um indicador de ineficácia.
+<p>
+<ul><b>OPORTUNIDADE DE MELHORIA:</b></ul>
+<p>
+Conforme dito, a quantidade de <i>page miss</i> de um programa está diretamente relacionada à eficácia do mesmo, afinal, toda vez que o sistema pede para acessar um arquivo e o mesmo não se encontra na Memória, ele deve buscar no Disco e isso gera um aumento excessivo de operações do sistema, tornando-se prejudicial.Sendo assim, é extremamente interessante buscar formas que acarretem na diminuição desse índice.
+<p>
+Existem formas que podem ser adotadas de maneira que façam com que nas vezes em que o sistema precisa de determinado arquivo, a chance de ele estar presente em Memória seja maior e com isso não ocorra uma grande quantidade de <i>page miss</i>. Uma ideia para que isso ocorra é criar um índice de chamadas de cada arquivo pelo sistema, com isso é possível criar uma classificação de recorrência desses arquivos e ao precisar devolver algum deles para a memória, optar por algum que tenha menos chamadas pois assim a possibilidade de manter um que será chamado novamente aumenta.
+<p>
+Outra possibilidade seria ao ler os processos, identificar se existem arquivos duplicados em algum processo e, caso exista, mapeá-lo para que ele não seja a opção a ser devolvida ao Disco em caso de necessidade devido a arquivos excedentes ao espaço da Memória. Conforme dito anteriormente, existem diversas possibilidades, seja criando algum controle ou alterando a estruturação dos procedimentos. O importante é sempre buscar o aprimoramento do código de forma a torná-lo melhor estruturado e organizado, melhorando o seu desempenho.
+<p>
+<ul><b>CONCLUSÃO:</b></ul>
+<p>
+Entender a dinâmica de como funciona um sistema operacional é de extrema importância, considerar a relação de coexistência entre a Memória e o Disco e a troca de informações entre essas estruturas faz com que compreendamos quais possíveis gargalos possam existir, assim como é possível vislumbrar quais melhorias seriam possíveis. Isto é, considerando essa proposta em específico que, apesar de ser bem menos complexa do que um sistema operacional convencional, nos traz a idéia de como é o processo.
+<p>
+Interessante também perceber o quanto instruções simples, quando combinadas, podem resultar em procedimentos elaborados com as mais diversas funções e que podemos adequar para atividades específicas, mostrando a versatilidade dos algoritmos e estruturas de dados.
