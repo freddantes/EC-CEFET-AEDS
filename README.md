@@ -1,6 +1,6 @@
-# EC-CEFET-AEDS
+# EC-CEFET-AEDS I
 
-<h2>RELATÓRIO DO PROBLEMA 11 DA LISTA DE AEDS I</h2>
+<h2>RELATÓRIO DO PROBLEMA 11 DA LISTA DE AEDS I - Frederico Dantés</h2>
 
 <ul><b>PROBLEMA:</b></ul> O problema consiste em elaborar um código estruturado, para simular as permutas de dados entre o disco e a memória de um computador, uma espécie de sistema operacional.
 <p>
